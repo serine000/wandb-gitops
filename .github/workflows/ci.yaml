@@ -6,7 +6,12 @@ jobs:
   my-firtst-job:
     runs-on: ubuntu-latest
     steps:
+      - run: actions/checkout@v4
       - name: Hello
         run: |
           echo "Hello World"
           echo "Indented command"
+      - name: Run Python
+        run: |
+          pip3 install -r requirements.txt
+          python3 ci.py
